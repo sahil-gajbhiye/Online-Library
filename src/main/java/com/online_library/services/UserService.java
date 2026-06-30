@@ -29,7 +29,7 @@ public class UserService {
 
 		user_response.setUser_id(String.valueOf(users.getUser_id()));
 		user_response.setUser_name(users.getUser_name());
-		user_response.setUser_email(users.getUser_email());
+		user_response.setUser_email(users.getEmail());
 		user_response.setUser_role(users.getUser_role());
 		user_response.setMembership_start(String.valueOf(users.getMembership_start()));
 		user_response.setMembership_end(String.valueOf(users.getMembership_end()));
