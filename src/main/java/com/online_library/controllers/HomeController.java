@@ -1,4 +1,4 @@
-package com.online_library.controller;
+package com.online_library.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
