@@ -22,22 +22,21 @@ public class BookSpecification {
 			// Book Name
 			if (bookFilterRequest.getBook_name() != null && !bookFilterRequest.getBook_name().isBlank()) {
 
-				predicates.add(criteriaBuilder.like(criteriaBuilder.lower(root.get("bookName")),
+				predicates.add(criteriaBuilder.like(criteriaBuilder.lower(root.get("book_name")),
 						"%" + bookFilterRequest.getBook_name().toLowerCase() + "%"));
 			}
 
 			// Author
 			if (bookFilterRequest.getBook_author() != null && !bookFilterRequest.getBook_author().isBlank()) {
 
-				predicates.add(criteriaBuilder.like(criteriaBuilder.lower(root.get("author")),
+				predicates.add(criteriaBuilder.like(criteriaBuilder.lower(root.get("book_author")),
 						"%" + bookFilterRequest.getBook_author().toLowerCase() + "%"));
 			}
 
 			// Category
 			if (bookFilterRequest.getCategory_id() != null && !bookFilterRequest.getCategory_id().isBlank()) {
 
-				predicates.add(criteriaBuilder.equal(root.join("category", JoinType.INNER).get("name"),
-						bookFilterRequest.getCategory_id()));
+				predicates.add(criteriaBuilder.equal(root.join("category_id"), bookFilterRequest.getCategory_id()));
 			}
 
 			// Status
